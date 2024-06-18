@@ -14,6 +14,12 @@ def get_days_from_today(date):
     difference_date = (date_users.toordinal() - date_current.toordinal())   #різниця між датами в днях
     return (difference_date)
 
+
+new_year_left = get_days_from_today('2025-01-01')
+print(f'До Нового року залишилось {new_year_left} днів')
+
+import random
+
 # функція генерує випадковий набір чисел у межах заданих параметрів: 
 # (мінімальне, максимальне можливе число та кількість чисел, які потрібно вибрати)
 def get_numbers_ticket(min, max, quantity):
@@ -36,6 +42,11 @@ def get_numbers_ticket(min, max, quantity):
     numbers_ticket.sort()                       # сортировка вихідного списку
     return(numbers_ticket)
 
+lottery_numbers = get_numbers_ticket(1, 49, 6)
+print("Ваші лотерейні числа:", lottery_numbers)
+
+import re
+
 # функція нормалізує телефонні номери до стандартного формату
 def normalize_phone(phone_number):
     result = re.findall(r'\d+', phone_number)   # видалення всіх символів, окрім цифр
@@ -44,13 +55,6 @@ def normalize_phone(phone_number):
     new_string = '+' + ''.join(result)          # додавання "+" с початку номера
     return(new_string)
 
-
-
-new_year_left = get_days_from_today('2025-01-01')
-print(f'До Нового року залишилось {new_year_left} днів')
-
-lottery_numbers = get_numbers_ticket(1, 49, 6)
-print("Ваші лотерейні числа:", lottery_numbers)
 
 raw_numbers = [
     "067\\t123 4567",
