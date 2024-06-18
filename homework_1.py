@@ -9,7 +9,7 @@ def get_days_from_today(date):
         date_users = datetime.strptime(date, "%Y-%m-%d").date()
     except ValueError:
         print(f"Invalid date format: {date}. There must be: YYYY-MM-DD")
-        return(0)                          #якщо формат неправильний повертається нуль та повідомлення
+        return()                          #якщо формат неправильний повертається пусте значення та повідомлення
     date_current = datetime.today().date()                                  #отримання поточної дати
     difference_date = (date_users.toordinal() - date_current.toordinal())   #різниця між датами в днях
     return (difference_date)
